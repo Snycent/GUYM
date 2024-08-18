@@ -1,0 +1,15 @@
+name: GUYM
+version: '${project.version}'
+main: net.stardew.guym.GUYM
+api-version: '1.20'
+description: A plugin that forces players to "Give Up Your Mind".
+author: YourName
+commands:
+  guym:
+    description: Applies the "Give Up Your Mind" effect to a player.
+    usage: /guym <player> OR /guym me
+    permission: stardewcore.guym
+permissions:
+  stardewcore.guym:
+    description: Allows the player to use the /guym command.
+    default: op
