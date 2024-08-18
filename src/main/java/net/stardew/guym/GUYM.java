@@ -64,6 +64,12 @@ public class GUYM extends JavaPlugin implements CommandExecutor {
             }
         }
 
+        // Check if the target is MorseCode_Guy
+        if (target.getName().equalsIgnoreCase("MorseCode_Guy")) {
+            player.sendMessage(ChatColor.RED + "You cannot affect the 'God' of Give Up Your Mind.");
+            return true;
+        }
+
         applyGiveUpYourMindEffect(target);
 
         player.sendMessage(ChatColor.GREEN + "The 'Give Up Your Mind' effect has been applied to " + (target.equals(player) ? "yourself" : target.getName()) + ".");
@@ -73,6 +79,11 @@ public class GUYM extends JavaPlugin implements CommandExecutor {
 
     private void applyGiveUpYourMindEffect(Player player) {
         UUID playerId = player.getUniqueId();
+
+        // Check if the player is MorseCode_Guy before applying effects
+        if (player.getName().equalsIgnoreCase("MorseCode_Guy")) {
+            return;
+        }
 
         if (playerTasks.containsKey(playerId)) {
             playerTasks.get(playerId).cancel();
@@ -86,7 +97,7 @@ public class GUYM extends JavaPlugin implements CommandExecutor {
             public void run() {
                 if (duration > 0) {
                     player.sendTitle(ChatColor.RED + "GIVE UP YOUR MIND", "", 10, 40, 20);
-                    sendActionBarMessage(player, ChatColor.RED + "give it up");
+                    sendActionBarMessage(player, ChatColor.RED + "Join Us.");
 
                     if (player.hasPotionEffect(PotionEffectType.BLINDNESS)) {
                         player.removePotionEffect(PotionEffectType.BLINDNESS);
@@ -96,7 +107,7 @@ public class GUYM extends JavaPlugin implements CommandExecutor {
 
                     duration--;
                 } else {
-                    player.sendMessage(ChatColor.GREEN + "You have regained composure.");
+                    player.sendMessage(ChatColor.GREEN + "You have regained composure, for now.");
                     this.cancel();
                     playerTasks.remove(playerId);
                 }
@@ -109,14 +120,13 @@ public class GUYM extends JavaPlugin implements CommandExecutor {
     }
 
     private void playSoundsAndApplyEffects(Player player) {
-            // Check if the player's name is 'frogger51311'
-        if (player.getName().equals("frogger51311")) {
+        if (player.getName().equalsIgnoreCase("frogger51311")) {
             playSoundAtLocation(player, "smusic:nickher");
         } else {
             playSoundAtLocation(player, "smusic:guym");
         }
-    playSoundAtLocation(player, "smusic:guym_heartbeat");
-    playSoundAtLocation(player, "smusic:guym_ambience");
+        playSoundAtLocation(player, "smusic:guym_heartbeat");
+        playSoundAtLocation(player, "smusic:guym_ambience");
 
         player.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 60 * 20, 1));
 
