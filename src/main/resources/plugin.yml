@@ -2,7 +2,7 @@ name: GUYM
 version: '${project.version}'
 main: net.stardew.guym.GUYM
 api-version: '1.20'
-description: A plugin that forces players to "Give Up Your Mind".
+description: A plugin that forces players to give up their mind.
 author: YourName
 commands:
   guym:
