@@ -109,9 +109,14 @@ public class GUYM extends JavaPlugin implements CommandExecutor {
     }
 
     private void playSoundsAndApplyEffects(Player player) {
-        playSoundAtLocation(player, "smusic:guym");
-        playSoundAtLocation(player, "smusic:guym_heartbeat");
-        playSoundAtLocation(player, "smusic:guym_ambience");
+            // Check if the player's name is 'frogger51311'
+        if (player.getName().equals("frogger51311")) {
+            playSoundAtLocation(player, "smusic:nickher");
+        } else {
+            playSoundAtLocation(player, "smusic:guym");
+        }
+    playSoundAtLocation(player, "smusic:guym_heartbeat");
+    playSoundAtLocation(player, "smusic:guym_ambience");
 
         player.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 60 * 20, 1));
 
