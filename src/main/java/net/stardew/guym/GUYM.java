@@ -24,7 +24,7 @@ public class GUYM extends JavaPlugin implements CommandExecutor {
     @Override
     public void onEnable() {
         this.getCommand("guym").setExecutor(this);
-        getLogger().info("GiveUpYourMind has been enabled.");
+        getLogger().info("GiveUpYourMind has been enabled");
     }
 
     @Override
