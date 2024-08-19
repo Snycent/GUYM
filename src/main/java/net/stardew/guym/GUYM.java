@@ -65,10 +65,10 @@ public class GUYM extends JavaPlugin implements CommandExecutor {
         }
 
         // Check if the target is MorseCode_Guy
-        if (target.getName().equalsIgnoreCase("MorseCode_Guy")) {
-            player.sendMessage(ChatColor.RED + "You cannot affect the 'God' of Give Up Your Mind.");
-            return true;
-        }
+        //if (target.getName().equalsIgnoreCase("MorseCode_Guy")) {
+            //player.sendMessage(ChatColor.RED + "You cannot affect the 'God' of Give Up Your Mind.");
+            //return true;
+        //}
 
         applyGiveUpYourMindEffect(target);
 
@@ -81,9 +81,9 @@ public class GUYM extends JavaPlugin implements CommandExecutor {
         UUID playerId = player.getUniqueId();
 
         // Check if the player is MorseCode_Guy before applying effects
-        if (player.getName().equalsIgnoreCase("MorseCode_Guy")) {
-            return;
-        }
+        //if (player.getName().equalsIgnoreCase("MorseCode_Guy")) {
+            //return;
+        //}
 
         if (playerTasks.containsKey(playerId)) {
             playerTasks.get(playerId).cancel();
@@ -120,7 +120,7 @@ public class GUYM extends JavaPlugin implements CommandExecutor {
     }
 
     private void playSoundsAndApplyEffects(Player player) {
-        if (player.getName().equalsIgnoreCase("frogger51311")) {
+        if (player.getName().equalsIgnoreCase("MorseCode_Guy")) {
             playSoundAtLocation(player, "smusic:nickher");
         } else {
             playSoundAtLocation(player, "smusic:guym");
