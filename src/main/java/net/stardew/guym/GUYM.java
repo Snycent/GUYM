@@ -80,10 +80,10 @@ public class GUYM extends JavaPlugin implements CommandExecutor {
     private void applyGiveUpYourMindEffect(Player player) {
         UUID playerId = player.getUniqueId();
 
-        // Check if the player is MorseCode_Guy before applying effects
-        //if (player.getName().equalsIgnoreCase("MorseCode_Guy")) {
-            //return;
-        //}
+        /* Check if the player is MorseCode_Guy before applying effects
+        if (player.getName().equalsIgnoreCase("MorseCode_Guy")) {
+            return;
+        }*/
 
         if (playerTasks.containsKey(playerId)) {
             playerTasks.get(playerId).cancel();
